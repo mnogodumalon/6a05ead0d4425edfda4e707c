@@ -1,0 +1,3 @@
+- Meine Gewohnheiten (meine_gewohnheiten): gewohnheit_name[string/text], gewohnheit_kategorie[string/text], gewohnheit_beschreibung[string/textarea], gewohnheit_icon[string/text], gewohnheit_aktiv[bool]
+- Täglicher Check-in (taeglicher_check_in): datum[date/date], erledigte_gewohnheiten[multipleapplookup/select], stimmung[lookup/radio], anzahl_erledigt[number], notizen[string/textarea], motto[string/text]
+  → erledigte_gewohnheiten links to app_id 6a05eab89a466f5a8cf44662

@@ -1,0 +1,200 @@
+{
+  "appgroup_id": "6a05ead0d4425edfda4e707c",
+  "appgroup_name": "Gewohnheitstracker",
+  "apps": {
+    "meine_gewohnheiten": {
+      "app_id": "6a05eab89a466f5a8cf44662",
+      "name": "Meine Gewohnheiten",
+      "main": false,
+      "controls": {
+        "gewohnheit_name": {
+          "identifier": "gewohnheit_name",
+          "label": "Bezeichnung der Gewohnheit",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        },
+        "gewohnheit_kategorie": {
+          "identifier": "gewohnheit_kategorie",
+          "label": "Kategorie",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        },
+        "gewohnheit_beschreibung": {
+          "identifier": "gewohnheit_beschreibung",
+          "label": "Beschreibung/Ziel",
+          "type": "string",
+          "subtype": "textarea",
+          "fulltype": "string/textarea",
+          "description": "A string value that can contain multiple lines of text (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        },
+        "gewohnheit_icon": {
+          "identifier": "gewohnheit_icon",
+          "label": "Icon/Emoji",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        },
+        "gewohnheit_aktiv": {
+          "identifier": "gewohnheit_aktiv",
+          "label": "Aktiv",
+          "type": "bool",
+          "subtype": null,
+          "fulltype": "bool",
+          "description": "A boolean value, i.e. `true` or `false` (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        }
+      }
+    },
+    "taeglicher_check_in": {
+      "app_id": "6a05eabcff4368d63491383b",
+      "name": "Täglicher Check-in",
+      "main": false,
+      "controls": {
+        "datum": {
+          "identifier": "datum",
+          "label": "Datum",
+          "type": "date",
+          "subtype": "date",
+          "fulltype": "date/date",
+          "description": "A calendar date consisting of year, month and day (or `null`/`None`)\n\nThe field value will be a string in the format `<YYYY>-<MM>-<DD>` (or `null`/`None`).\n\nFor example: `2000-02-29`.\n\nFor `POST`/`PUT`/`PATCH` requests the REST API uses a liberal parsing approach so that strings like `2026`, `February 29, 2000 12:34 MEST`, `letztes Jahr` etc. will be accepted as value date values. However this runs the risk of parsing ambiguous values incorrectly. To ensure reliable parsing it is best to use the canonical format specified above.",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        },
+        "erledigte_gewohnheiten": {
+          "identifier": "erledigte_gewohnheiten",
+          "label": "Erledigte Gewohnheiten",
+          "type": "multipleapplookup",
+          "subtype": "select",
+          "fulltype": "multipleapplookup/select",
+          "description": "Arbitrary number of referenced LivingApp records from the target lookup app 'Meine Gewohnheiten' with the id `6a05eab89a466f5a8cf44662`.\n\nThe field value will be a list of valid record URLs in the form `https://my.living-apps.de/rest/apps/6a05eab89a466f5a8cf44662/<record-id>`.\n\nDisplayed as a multi-select field in HTML pages.",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "lookup_app": "https://my.living-apps.de/rest/apps/6a05eab89a466f5a8cf44662"
+        },
+        "stimmung": {
+          "identifier": "stimmung",
+          "label": "Stimmung heute",
+          "type": "lookup",
+          "subtype": "radio",
+          "fulltype": "lookup/radio",
+          "description": "One selected option of multiple available options (or `null`/`None`).\n\nThe available options are defined in the `lookup_data` attribute of this control.\n\nThe field value will be the key in this `lookup_data` attribute (or `null`/`None`).\n\nDisplayed as radio button fields in HTML pages.",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "lookup_data": {
+            "super": "😊 Super",
+            "gut": "🙂 Gut",
+            "okay": "😐 Okay",
+            "nicht_so_gut": "😕 Nicht so gut",
+            "schlecht": "😞 Schlecht"
+          }
+        },
+        "anzahl_erledigt": {
+          "identifier": "anzahl_erledigt",
+          "label": "Anzahl erledigter Gewohnheiten",
+          "type": "number",
+          "subtype": null,
+          "fulltype": "number",
+          "description": "A decimal number value (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "precision": null
+        },
+        "notizen": {
+          "identifier": "notizen",
+          "label": "Notizen & Reflexion",
+          "type": "string",
+          "subtype": "textarea",
+          "fulltype": "string/textarea",
+          "description": "A string value that can contain multiple lines of text (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        },
+        "motto": {
+          "identifier": "motto",
+          "label": "Mein Motivations-Motto für heute",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": null,
+          "in_list": false,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": null,
+          "in_expert_search": true
+        }
+      }
+    }
+  },
+  "metadata": {
+    "apps_list": [
+      "Meine Gewohnheiten",
+      "Täglicher Check-in"
+    ]
+  }
+}

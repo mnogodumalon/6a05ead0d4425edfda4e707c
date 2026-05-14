@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "forms": [
+    {
+      "entity": "meine_gewohnheiten",
+      "app_id": "6a05eab89a466f5a8cf44662",
+      "path": "/rest/apps/6a05eab89a466f5a8cf44662/records",
+      "allowed_fields": [
+        "gewohnheit_name",
+        "gewohnheit_kategorie",
+        "gewohnheit_beschreibung",
+        "gewohnheit_icon",
+        "gewohnheit_aktiv"
+      ],
+      "pow": true,
+      "pow_difficulty": 50000,
+      "title": "Meine Gewohnheiten — Formular"
+    },
+    {
+      "entity": "taeglicher_check_in",
+      "app_id": "6a05eabcff4368d63491383b",
+      "path": "/rest/apps/6a05eabcff4368d63491383b/records",
+      "allowed_fields": [
+        "datum",
+        "erledigte_gewohnheiten",
+        "stimmung",
+        "anzahl_erledigt",
+        "notizen",
+        "motto"
+      ],
+      "pow": true,
+      "pow_difficulty": 50000,
+      "title": "Täglicher Check-in — Formular"
+    }
+  ]
+}
